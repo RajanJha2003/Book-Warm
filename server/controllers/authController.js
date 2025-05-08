@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import { User } from '../models/userModel.js';
 import crypto from 'crypto';
 import { catchAsyncErrors } from '../middleware/catchAsyncErrors.js';
+import { sendVerificationCode } from '../utils/sendVerificationCode.js';
 
 
 export const register=catchAsyncErrors(async(req,res,next)=>{
