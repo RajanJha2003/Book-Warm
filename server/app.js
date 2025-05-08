@@ -5,11 +5,15 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors'
 import { connectDB } from './database/db.js';
 import { errorMiddleware } from './middleware/errorMiddleware.js';
+import authRouter from './routes/authRouter.js'
 
 config({
   path: "./config/config.env",
 });
 export const app = express()
+
+
+app.use("/api/v1/auth",authRouter)
 
 connectDB();
 
